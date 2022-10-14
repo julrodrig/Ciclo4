@@ -18,10 +18,12 @@ let enlaceListaContacto = document.querySelector("#lista-contacto");
 const consultarApi = async () => {
 
     try{
-        let respuesta = await fetch("https://whispering-wildwood-03076.herokuapp.com/blogs");
+        let respuesta = await fetch("https://https://min-api.cryptocompare.com/data/top/totalvolfull?limit=20&tsym=COP");
+        //let respuesta = await fetch("https://whispering-wildwood-03076.herokuapp.com/blogs");
         let resultados = await respuesta.json();
         //console.log(resultados.Data[0].CoinInfo.FullName);
-        console.log(resultados);
+        console.log(resultados.Data);
+        //console.log(resultados);
 
     }catch(e){
         console.error(e.message);
@@ -35,11 +37,11 @@ const consultarApi = async () => {
 document.addEventListener("DOMContentLoaded", () => {
     contactos = JSON.parse(localStorage.getItem("contactos")) || [];
     console.log(contactos);
+    
+    console.log(contactos[0].id = 1234561);
+    console.log(contactos[0]["nombre"]);
 
-    console.log(contactos[5].id = 123456)
-    console.log(contactos[5]["nombre"])
-
-    console.log(contactos[5]["nombre"] = "ASHLEE CASTRO")
+    console.log(contactos[0]["nombre"] = "ASHLEE CASTRO");
 
 
     const persona = {
