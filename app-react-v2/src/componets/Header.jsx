@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({count}) => {
   return (
-    <div> <h1>TITULO DE PAGINA </h1>
-    </div>
+   <header>
+    <h1 className="titulo">Sistema Administracion de Contactos <span>Desarrollo WEB</span></h1>
+    <h3> Visitante # {Count}</h3>
+   
+   </header>
   )
 }
 
