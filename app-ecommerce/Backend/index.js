@@ -19,6 +19,7 @@ app.use(express.json());
 conectarDB();
 // middlewares
 // Se utiliza para realizar la comunicacion entre el servidor del frontend y el backend
+// ! Cors ayuda / gestiona el acceder solo a los dominios permitidos 
 const dominiosPermitidos = [process.env.FRONTEND_URL];
 const corsOptions = {
     origin: function (origin, callback) {
