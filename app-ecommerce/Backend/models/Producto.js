@@ -26,4 +26,6 @@ const productoSchema = new mongoose.Schema({
     trim: true,
   },
 });
-export default mongoose.model("Producto", productoSchema);
+
+const Producto = mongoose.model("Producto", productoShema); // ! Se lleva el modelo a la DB Mongoose
+export default Producto;

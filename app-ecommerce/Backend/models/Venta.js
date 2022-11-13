@@ -1,22 +1,31 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+
 const ventaShema = mongoose.Schema(
-  {
-    cliente: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Usuario",
+    {
+        cliente: {
+            type: mongoose.Schema.Types.ObjectId,     //! Referencia con otra coleccion de Mongoose
+            ref: "Usuario"
+        },
+        articulos: {
+            type: Array,
+            required: true
+        },
+        confirmado: {
+            type: Boolean,
+            default: false,
+        },
+        total: {
+            type: Numbers,
+            required: true
+        },
+        estado: {
+            type: String,
+            default: "vigente",
+        },
     },
-    articulos: {
-      type: Array,
-      required: true,
-    },
-    confirmado: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  {
-    timestamps: true,
-  }
+    {
+        timestamps: true,
+    }
 );
-const Venta = mongoose.model("Venta", ventaShema);
+const Venta = mongoose.model('Venta', ventaShema);
 export default Venta;

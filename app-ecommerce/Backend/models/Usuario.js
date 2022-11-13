@@ -22,7 +22,7 @@ const usuarioShema = mongoose.Schema({
   },
   telefono: {
     type: String,
-    default: null,   // ! No es necesario su ingreso 
+    default: null,   // ! Campo para el cual No es necesario su ingreso 
     trim: true,
   },
   direccion: {
@@ -63,5 +63,5 @@ usuarioShema.pre("save", async function (next) {
 usuarioShema.methods.comprobarPassword = async function (passwordFormulario) {
   return await bcrypt.compare(passwordFormulario, this.password);
 };
-const Usuario = mongoose.model("Usuario", usuarioShema);
-export default Usuario;
+const Usuario = mongoose.model("Usuario", usuarioShema);  // ! Se lleva el modelo a la DB Mongoose
+export default Usuario;                                   // ! Se utilizara el modelo en el controlador.
